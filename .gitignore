@@ -1,0 +1,23 @@
+# Sensitive
+.credentials.json
+*.jsonl
+.session-stats.json
+mcp-needs-auth-cache.json
+
+# Large/ephemeral
+history.jsonl
+cache/
+paste-cache/
+shell-snapshots/
+telemetry/
+sessions/
+debug/
+file-history/
+backups/
+plans/
+tasks/
+todos/
+
+# IDE / runtime
+ide/
+.omc/
