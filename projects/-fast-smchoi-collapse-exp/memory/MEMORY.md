@@ -4,3 +4,4 @@
 - [Posterior Memory Project](project_posterior_memory.md) — External memory matrix write-rule design at /fast/smchoi/sionna/posterior-memory/; EXP-002 running
 - [User Profile](user_profile.md) — SNU researcher, RTX 3090 local/remote (snu-4), TF 2.6.2, prefers direct execution without confirmation
 - [Dataset Generation Project](project_dataset_generation.md) — Internet-scale (state, action, reasoning) triple dataset from YouTube/desktop videos; novelty = reasoning annotation missing from all existing datasets
+- [FPX Paper Analysis & Follow-up](project_fpx_analysis.md) — "Win Fast or Lose Slow" (2505.19481) deep analysis; Wiki calibration gap, T-FPX proposal, Weissman collaboration potential

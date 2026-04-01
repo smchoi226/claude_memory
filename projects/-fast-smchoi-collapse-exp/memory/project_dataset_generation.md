@@ -113,3 +113,22 @@ Goal: Build and publicly release a large-scale (state, action, reasoning) triple
 **Why:** Dataset + pipeline 공개가 지금 당장 실행 가능한 output. 특별한 하드웨어 불필요. Reasoning triple이 VLA 모델의 long-horizon planning의 missing piece.
 
 **How to apply:** 시작점은 체스(Lichess) + 바둑(KGS/OGS) — API 있고 저작권 없고 reasoning 품질 높음.
+
+---
+
+## 구현 진행 상황
+
+### 핵심 원칙 (정리됨)
+좋은 소스 조건: (1) State 디지털 정의됨, (2) Action 명확히 기록됨, (3) 사람이 이미 transition에 이유를 붙여놨음.
+KGS C[] 코멘트는 대부분 채팅("hi", "gg") 수준 → Lichess Study가 훨씬 낫다.
+
+### 완료된 작업
+- 바둑 파이프라인: `/fast/smchoi/state_action_reasoning/` (pipeline.py, board_detector.py, extract_triples.py)
+  - 영상 2개 처리: MyHQHENJilw (107 triples), LXDe1iE0x7o (1,500 triples)
+  - OpenCV 기반 보드 검출 + faster-whisper ASR → reasoning
+- 체스 파이프라인: `/fast/smchoi/state_action_reasoning/chess/lichess_to_triples.py`
+  - Lichess Study API → PGN 파싱 → (FEN, UCI move, GM 해설) 트리플
+  - 스터디 1개(16게임) 테스트: 284 트리플, GM 수준 해설 품질 확인
+
+### 다음 단계
+- Lichess GM 어노테이터 계정들 bulk scrape (RenierChess 등)
